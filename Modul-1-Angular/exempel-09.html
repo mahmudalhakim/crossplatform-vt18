@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="exempel-09.js"></script>
+    <title>Exempel 9</title>
+  </head>
+<body ng-app="myApp">
+    <h1>Exempel 9</h1>
+
+    <div ng-controller="myCtrl">
+        <h2>Ange förnamn
+            <input type="text" ng-model="firstName">
+        </h2>
+        
+        <h2>Ange efternamn
+            <input type="text" ng-model="lastName">
+        </h2>
+        <h1>{{ fullname() }}</h1>
+    </div>
+
+  </body>
+</html>

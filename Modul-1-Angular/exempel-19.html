@@ -19,13 +19,23 @@
     </script>
     
     <div ng-app="myApp" ng-controller="myCtrl">
-        <input type="text" ng-model="data">
+        <h2>Filtrera efter namn eller land</h2>
+        <input type="text" ng-model="searchAll">
         <ul>
-            <li ng-repeat="x in names | filter:data">
+            <li ng-repeat="x in names | filter:searchAll">
+                {{x.name}} ({{x.country}})
+            </li>
+        </ul>
+        <hr>
+        <h2>Filtrera efter namn</h2>
+        <input type="text" ng-model="search.name">
+        <ul>
+            <li ng-repeat="x in names | filter:search">
                 {{x.name}}
             </li>
         </ul>
         <hr>
+        <h2>Visa alla</h2>
         <ul>
             <li ng-repeat="x in names">
                 {{x.name}} , {{x.country}}

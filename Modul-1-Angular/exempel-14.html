@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 14</title>
+  </head>
+<body>
+    <h1>Exempel 14</h1>
+    
+    <script>
+    angular.module("myApp" , []).controller("myCtrl", function($scope){
+        $scope.firstName = "Mahmud";
+        $scope.lastName  = "Al Hakim";
+    })
+    </script>
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>{{ lastName | uppercase }}</h1>
+    </div>
+
+  </body>
+</html>

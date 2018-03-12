@@ -1,0 +1,19 @@
+<!-- 
+    En Angular template från 
+    https://angularjs.org/
+ -->
+<!doctype html>
+<html ng-app>
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div>
+        <input ng-model="namn"  placeholder="Enter your name">
+        <input ng-model="epost" placeholder="Enter your email">
+        <hr>
+        <h1>Hello {{namn}}!</h1>
+        <h2>Your email is {{epost}}</h2>       
+    </div>
+  </body>
+</html>

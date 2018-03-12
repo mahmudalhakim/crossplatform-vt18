@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 4</title>
+  </head>
+<body>
+    <h1>Exempel 4</h1>
+    <h2>Skriv en färg i fältet nedan! (färgnamn eller hexkod)</h2>
+    <div ng-init="myColor='#FFF'">
+        <input type="text"
+               style="background-color:{{myColor}}"
+               value="{{myColor}}"
+               ng-model=myColor
+        >
+    </div>
+
+  </body>
+</html>

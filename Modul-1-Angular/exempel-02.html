@@ -1,0 +1,14 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 2</title>
+  </head>
+<body>
+    <h1>Exempel 2</h1>
+    <div ng-init="moms=0.25">
+        <p>Pris exkl. moms: 100 kr</p>
+        <p>Pris inkl. moms : {{100*(1+moms)}} kr</p>
+    </div>
+  </body>
+</html>

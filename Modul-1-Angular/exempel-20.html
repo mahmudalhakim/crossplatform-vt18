@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 20</title>
+  </head>
+<body>
+    <h1>Exempel 20</h1>
+    <div ng-init="antal=1;pris=100;moms=0.25">
+        <h1>Ange antal produkter</h1>
+        <input type="number" min="0" ng-model="antal">
+        
+        <h1>Ange pris per produkt</h1>
+        <input type="number" min="0" ng-model="pris">
+    </div>
+
+    <h2>Totalpris exkl. moms: {{antal*pris}}</h2>
+    <h2>Totalpris inkl. moms: {{antal*pris* (1+moms) | number:2}}</h2>
+
+  </body>
+</html>

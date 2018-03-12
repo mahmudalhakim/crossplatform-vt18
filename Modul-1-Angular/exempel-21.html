@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 21</title>
+  </head>
+<body>
+    <h1>Exempel 21</h1>
+  
+    <script>
+    var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+        $scope.count = 0;
+    })
+    </script>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        Välj antal produkter: 
+        <button ng-click="count = count + 1">+</button>
+        {{count}}
+        <button ng-click="count = count - 1">-</button>
+    </div>
+
+  </body>
+</html>

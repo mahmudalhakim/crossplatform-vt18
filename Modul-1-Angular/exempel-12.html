@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 12</title>
+  </head>
+<body>
+    <h1>Exempel 12</h1>
+    
+    <script>
+    var app = angular.module("myApp" , []);
+    app.controller("monthsCtrl", function($scope){
+        $scope.months = ['Jan','Feb','Mar'];
+    })
+    </script>
+    <div ng-app="myApp" ng-controller="monthsCtrl">
+        <div ng-repeat="m in months">
+            {{m}}
+        </div>
+    </div>
+  </body>
+</html>

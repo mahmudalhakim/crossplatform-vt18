@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 13</title>
+  </head>
+<body>
+    <h1>Exempel 13</h1>
+    
+    <script>
+    var app = angular.module("myApp" , []);
+    app.controller("personsCtrl", function($scope){
+        $scope.persons = [
+            {name:'Mahmud', country:'Iraq'},
+            {name:'Kalle' , country:'Sweden'},
+            {name:'Adam'  , country:'Sweden' }
+        ];
+    })
+    </script>
+    <div ng-app="myApp" ng-controller="personsCtrl">
+    <ul>
+        <li ng-repeat="p in persons">
+            {{p.name + " (" + p.country + ")"}}
+        </li>
+    </ul>
+    <hr>
+    <table border=1>
+        <tr>
+            <th>Namn</th>
+            <th>Land</th>
+        </tr>
+        <tr ng-repeat="p in persons">
+            <td>{{p.name}}</td>
+            <td>{{p.country}}</td>
+        </tr>
+    </table>
+    </div>
+  </body>
+</html>

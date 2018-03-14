@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 28</title>
+  </head>
+
+<body ng-app="app">
+    <h1>Exempel 28</h1>
+    <h2>Arbeta med rootScope</h2>
+   
+    <script>
+        var app = angular.module("app" , []);
+
+        // En funktion som exeveras vid initiering av Angular-applikationen
+        app.run(function($rootScope){
+            $rootScope.title   = "Newton";
+            $rootScope.address = "Malmvägen 1";
+            $rootScope.getInfo = function(){
+                return $rootScope.title +  ", "  + $rootScope.address;
+            }
+        });
+
+        app.controller("ctrl1" , function($scope){
+            $scope.title = "Mahmud";
+        });
+
+        app.controller("ctrl2" , function($scope){
+            $scope.address = "Hemfridsvägen 1";
+        });
+
+        app.controller("ctrl3" , function($scope){
+            $scope.data = "TEST Från ctrl3";
+        });
+
+    </script>
+
+    <hr>
+    <h3>Exempel på data som hämtas från rootScope</h3>
+    <h1>{{title}}</h1>
+    <h2>{{address}}</h2>
+    <h3>
+        {{getInfo()}}
+    </h3>
+    
+    <h3>Exempel på data som hämtas från scope</h3>
+    <div ng-controller="ctrl1">
+        <h1>{{title}}</h1>
+        <h2>{{address}}</h2>
+    </div>
+    <div ng-controller="ctrl2">
+        <h1>{{title}}</h1>
+        <h2>{{address}}</h2>
+    </div>
+    <div ng-controller="ctrl3">
+        <h1>
+            {{data}}
+        </h1>
+    </div>
+</body>
+</html>

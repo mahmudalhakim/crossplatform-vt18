@@ -32,7 +32,7 @@
         <br><br>
 
         Ange e-post <br>
-        <input type="email" name="email" ng-model="email" required><br>
+        <input type="email" name="email" ng-model="email" required>
         <span ng-show="myForm.email.$error.email" class="error">
             Ange en giltig e-postadress tack!
         </span>
@@ -40,19 +40,25 @@
     </form>
     
     <hr>
-    <h2>Testa name</h2>
-    <h4> Valid?    {{myForm.name.$valid}}    </h4>
-    <h4> Invalid?  {{myForm.name.$invalid}}  </h4>
-    <h4> Error?    {{myForm.name.$error}}    </h4>
-    <h4> Pristine? {{myForm.name.$pristine}} </h4>
-    <h4> Dirty?    {{myForm.name.$dirty}}    </h4>
+
+    <div style="float: left; width:50%">
+        <h2>Testa name</h2>
+        <h4> Valid?    {{myForm.name.$valid}}    </h4>
+        <h4> Invalid?  {{myForm.name.$invalid}}  </h4>
+        <h4> Error?    {{myForm.name.$error}}    </h4>
+        <h4> Pristine? {{myForm.name.$pristine}} </h4>
+        <h4> Dirty?    {{myForm.name.$dirty}}    </h4>
+    </div>
     
-    <h2>Testa email</h2>
-    <h4> Valid?    {{myForm.email.$valid}}    </h4>
-    <h4> Invalid?  {{myForm.email.$invalid}}  </h4>
-    <h4> Error?    {{myForm.email.$error}}    </h4>
-    <h4> Pristine? {{myForm.email.$pristine}} </h4>
-    <h4> Dirty?    {{myForm.email.$dirty}}    </h4>
+    <div style="float: left;">
+
+        <h2>Testa email</h2>
+        <h4> Valid?    {{myForm.email.$valid}}    </h4>
+        <h4> Invalid?  {{myForm.email.$invalid}}  </h4>
+        <h4> Error?    {{myForm.email.$error}}    </h4>
+        <h4> Pristine? {{myForm.email.$pristine}} </h4>
+        <h4> Dirty?    {{myForm.email.$dirty}}    </h4>
+    </div>
     
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 27</title>
+
+    <style>
+    .error{
+        color:red;
+    }
+    input.ng-invalid-email{
+        color:red;
+    }
+    input.ng-valid-email{
+        color:green;
+    }
+    input.ng-empty{
+        color:black;
+    }
+    </style>
+  </head>
+
+<body ng-app>
+    <h1>Exempel 27</h1>
+    <h2>Arbeta med forumlär</h2>
+   
+    <form name="myForm" action="">
+        
+        Ange namn: <br>
+        <input type="text" name="name" ng-model="name" required>
+
+        <br><br>
+
+        Ange e-post <br>
+        <input type="email" name="email" ng-model="email" required><br>
+        <span ng-show="myForm.email.$error.email" class="error">
+            Ange en giltig e-postadress tack!
+        </span>
+
+    </form>
+    
+    <hr>
+    <h2>Testa name</h2>
+    <h4> Valid?    {{myForm.name.$valid}}    </h4>
+    <h4> Invalid?  {{myForm.name.$invalid}}  </h4>
+    <h4> Error?    {{myForm.name.$error}}    </h4>
+    <h4> Pristine? {{myForm.name.$pristine}} </h4>
+    <h4> Dirty?    {{myForm.name.$dirty}}    </h4>
+    
+    <h2>Testa email</h2>
+    <h4> Valid?    {{myForm.email.$valid}}    </h4>
+    <h4> Invalid?  {{myForm.email.$invalid}}  </h4>
+    <h4> Error?    {{myForm.email.$error}}    </h4>
+    <h4> Pristine? {{myForm.email.$pristine}} </h4>
+    <h4> Dirty?    {{myForm.email.$dirty}}    </h4>
+    
+</body>
+</html>

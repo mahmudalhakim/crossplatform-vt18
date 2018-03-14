@@ -3,11 +3,13 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <title>Exempel 23</title>
-
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css">
     <style>
         th:hover{
             background-color: yellowgreen;
+        }
+        .pil:hover{
+            color:white;
         }
     </style>
   </head>
@@ -21,7 +23,7 @@
             {id:'01' , namn:'PC'       , pris:8000},
             {id:'02' , namn:'Mac'      , pris:9000},
             {id:'03' , namn:'iPad'     , pris:5000},
-            {id:'04' , namn:'iPhone X' , pris:11000},
+            {id:'04' , namn:'iPhone X' , pris:12000},
         ] ;
 
         $scope.orderByMe = function(x , desc=false){
@@ -36,15 +38,19 @@
         })
     </script>
     
-    <div ng-app="myApp" ng-controller="myCtrl">
+    <div ng-app="myApp" ng-controller="myCtrl" class="container">
 
         <h2>Visa alla produkter</h2>
         <h3>Klicka på kolumnrubrikerna för att sortera listan</h3>
-        <table border="1" width="500">
+        <table class="table table-hover table-sm">
             <tr>
                 <th ng-click="orderByMe('id')">ID</th>
                 <th ng-click="orderByMe('namn')">Namn</th>
-                <th ng-click="orderByMe('pris', true)">Pris</th>
+                <th>
+                    <span class="pil" ng-click="orderByMe('pris', true)">&uarr;</span>
+                    Pris 
+                    <span class="pil" ng-click="orderByMe('pris')">&darr;</span>
+                </th>
             </tr>
             <tr ng-repeat="p in produkter | orderBy:myOrderBy">
                 <td>{{p.id}}</td>

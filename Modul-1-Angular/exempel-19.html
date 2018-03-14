@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <title>Exempel 19</title>
   </head>
+
 <body>
     <h1>Exempel 19</h1>
     
@@ -18,25 +19,83 @@
     })
     </script>
     
+
+
     <div ng-app="myApp" ng-controller="myCtrl">
 
+        <h2>Visa alla objekt</h2>
+        <p ng-repeat="name in names">{{name}}</p>
+        
+        <hr>
         <h2>Visa alla</h2>
+        <p ng-repeat="name in names">{{name.name}}</p>
+        
+        <hr>
+
+        <table border=1>
+            <tr ng-repeat="obj in names">
+                <td>{{obj.name}}</td>
+            </tr>
+        </table>
+        
+        <hr>
+
         <ul>
             <li ng-repeat="x in names">
                 {{x.name}} , {{x.country}}
             </li>
         </ul>
 
+        <hr>
+
+        <table border=1>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+            </tr>
+            <tr ng-repeat="vadsomhelst in names">
+                <td>{{vadsomhelst.name}}</td>
+                <td>{{vadsomhelst.country}}</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>Visa alla (name/country) som innehåller bokstaven M</h2>
+        <div ng-repeat="x in names | filter:'M'">{{x.name}}</div>
+
+        <hr>
+
         <h2>Filtrera efter namn eller land</h2>
+
         <input type="text" ng-model="searchAll">
+
         <ul>
             <li ng-repeat="x in names | filter:searchAll">
                 {{x.name}} ({{x.country}})
             </li>
         </ul>
 
+        <hr>
 
-        
+        <h2>Filtrera efter namn (ej land)</h2>
+        <p>OBS! Lägga till en nyckel i modellen (input)</p>
+        <p>I nedanstående exempel name är en nyckel i objekten</p>
+
+        <input type="text" ng-model="searchName.name">
+        <ul>
+            <li ng-repeat="x in names | filter:searchName">
+                {{x.name}}
+            </li>
+        </ul>
+
+        <h2>Filtrera efter land (ej namn)</h2>
+        <input type="text" ng-model="searchCountry.country">
+        <ul>
+            <li ng-repeat="x in names | filter:searchCountry">
+                {{x.name}} ({{x.country}})
+            </li>
+        </ul>
     </div>
   </body>
 </html>

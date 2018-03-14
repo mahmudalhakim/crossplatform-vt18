@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 26</title>
+  </head>
+
+<body ng-app>
+    <h1>Exempel 26</h1>
+    <h2>Arbeta med radioknappar och switch</h2>
+   
+    <form action="">
+        <input type="radio" ng-model="myValue" value="1"> Ett <br>
+        <input type="radio" ng-model="myValue" value="2"> Två <br>
+        <input type="radio" ng-model="myValue" value="3"> Tre <br>
+    </form>
+    <hr>
+    <div ng-switch="myValue">
+        <div ng-switch-when="1">
+            <h1>Ett</h1>
+        </div>
+        <div ng-switch-when="2">
+            <h1>Två</h1>
+        </div>
+        <div ng-switch-when="3">
+            <h1>Tre</h1>
+        </div>
+    </div>
+</body>
+</html>

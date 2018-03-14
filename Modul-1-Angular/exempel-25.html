@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 25</title>
+  </head>
+
+<body ng-app>
+    <h1>Exempel 25</h1>
+    <h2>Arbeta med checkboxar (kryssrutor)</h2>
+    
+    Visa inforuta 1
+    <input type="checkbox" ng-model="info1" ng-init="info1=true">
+    <br>
+    Visa inforuta 2
+    <input type="checkbox" ng-model="info2">
+
+    <hr>
+
+    <h2 ng-show="info1">Information 1</h2>
+    <h2 ng-show="info2">Information 2</h2>
+    
+    <h2>NG-IF</h2>
+
+    <input type="checkbox" ng-model="checked" ng-init="checked=true">
+    <br>
+    <h3 ng-if="checked">Detta döljs om du markerar kryssrutan!</h3>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 23</title>
+
+
+    <style>
+        th:hover{
+            background-color: yellowgreen;
+        }
+    </style>
+  </head>
+
+<body>
+    <h1>Exempel 23</h1>
+    
+    <script>
+    angular.module("myApp" , []).controller("myCtrl", function($scope){
+        $scope.produkter = [
+            {id:'01' , namn:'PC'       , pris:8000},
+            {id:'02' , namn:'Mac'      , pris:9000},
+            {id:'03' , namn:'iPad'     , pris:5000},
+            {id:'04' , namn:'iPhone X' , pris:11000},
+        ] ;
+
+        $scope.orderByMe = function(x , desc=false){
+            $scope.myOrderBy = x;
+            
+            // Lägg till "-" för att sortera stigande (högsta pris högst upp)
+            if(desc){
+                $scope.myOrderBy = "-" + x;
+            }
+        }
+
+        })
+    </script>
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <h2>Visa alla produkter</h2>
+        <h3>Klicka på kolumnrubrikerna för att sortera listan</h3>
+        <table border="1" width="500">
+            <tr>
+                <th ng-click="orderByMe('id')">ID</th>
+                <th ng-click="orderByMe('namn')">Namn</th>
+                <th ng-click="orderByMe('pris', true)">Pris</th>
+            </tr>
+            <tr ng-repeat="p in produkter | orderBy:myOrderBy">
+                <td>{{p.id}}</td>
+                <td>{{p.namn}}</td>
+                <td>{{p.pris}}</td>
+            </tr>
+        </table>
+        
+  </body>
+</html>

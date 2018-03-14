@@ -1,0 +1,16 @@
+{
+
+    "customers":[
+        {
+            "Name":"Mahmud Al Hakim",
+            "City":"Stockholm",
+            "Country":"Sweden"
+        },
+        {
+            "Name":"Kalle Anka",
+            "City":"Disney",
+            "Country":"USA"
+        }
+    ]
+
+}

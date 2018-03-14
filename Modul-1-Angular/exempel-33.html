@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 33</title>
+  </head>
+
+<body>
+    <h1>Exempel 33</h1>
+    <h2>Arbeta med Angular Services (Tjänster)</h2>
+    <h3>Tjänsten $http (OBS! Viktigt)</h3>
+
+
+    <script>        
+        var app = angular.module("app", []);
+        app.controller("customersCtrl", function($scope , $http){
+          $http.get("customers.json")
+               .then(function(response){
+                   $scope.customers = response.data.customers;
+                   // Vad är response och vad är data?
+                   $scope.response  = response;
+                   $scope.data     = response.data;
+
+               });
+        });
+    </script>    
+
+    <div  ng-app="app" ng-controller="customersCtrl">
+
+        <div ng-if="response.status==200">
+
+        <h2>Våra kunder</h2>
+        <ul>
+            <li ng-repeat="c in customers">
+                {{c.Name}}
+            </li>
+        </ul>
+
+
+        <hr>
+
+        <table border="1" width="500">
+                <tr>
+                    <th>Namn</th>
+                    <th>Stad</th>
+                    <th>Land</th>
+                </tr>
+                <tr ng-repeat="c in customers">
+                    <td>{{c.Name}}</td>
+                    <td>{{c.City}}</td>
+                    <td>{{c.Country}}</td>
+                </tr>
+            </table>
+
+        <hr>
+        
+        <h2>Vad innehåller response?</h2>
+        <pre>
+            {{response | json}}
+        </pre>
+       
+
+        <h2>Vad innehåller data?</h2>
+        <pre>
+            {{data | json}}
+        </pre>
+
+
+        
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

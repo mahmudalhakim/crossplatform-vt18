@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 34</title>
+    <style>
+    .address{
+        border:1px dotted grey;
+        padding: 2mm;;
+        float: left;
+        margin: 2mm;
+        width:35mm;
+        height:35mm;
+
+    }
+    </style>
+  </head>
+
+<body>
+    <h1>Exempel 34</h1>
+    <h2>Arbeta med Angular Services (Tjänster)</h2>
+    <h3>Tjänsten $http (OBS! Viktigt)</h3>
+    <h3>Externa resurser från t.ex
+        <a href="https://jsonplaceholder.typicode.com/users">
+            https://jsonplaceholder.typicode.com/users</a>
+    </h3>
+
+    <script>        
+        var app = angular.module("app", []);
+        app.controller("usersCtrl", function($scope , $http){
+          $http.get("https://jsonplaceholder.typicode.com/users")
+               .then(function(response){
+                   // Vad är response?
+                   $scope.users  = response.data;
+                   
+               });
+        });
+    </script>    
+
+    <div ng-app="app" ng-controller="usersCtrl">
+
+    <h2>Visa alla namn</h2>
+    <ul>
+        <li ng-repeat="u in users">
+            {{u.name}}
+        </li>
+    </ul>
+
+    <h2>Visa en tabell över namn och epost</h2>
+    <table border="1">
+        <tr>
+            <th>Namn</th>
+            <th>E-post</th>
+        </tr>
+        <tr ng-repeat="u in users">
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+        </tr>
+    </table>
+
+    <h2>Visa adressetiketter</h2>
+    <div ng-repeat="u in users" class="address">
+        <b>{{u.name}}</b> <br>
+        {{u.address.street}} <br> 
+        {{u.address.suite}} <br>
+        {{u.address.zipcode}} <br>
+        {{u.address.city}} <br>
+        <br>
+    </div>
+
+    <div style="clear:both"></div>
+    <hr>
+    <pre>
+        {{users | json}}
+    </pre>
+    </div>   
+
+</body>
+</html>

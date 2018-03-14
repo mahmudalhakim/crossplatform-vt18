@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 30</title>
+  </head>
+
+<body ng-app="app">
+    <h1>Exempel 30</h1>
+    <h2>Arbeta med Angular Services (Tjänster)</h2>
+    <h3>Tjänsten $location</h3>
+
+    <script>
+        
+        var app = angular.module("app", []);
+        app.controller("ctrl", function($scope , $location){
+            $scope.myURL = $location.absUrl();
+        })
+
+    </script>    
+
+    <h4 ng-controller="ctrl">{{myURL}}</h4>
+
+</body>
+</html>

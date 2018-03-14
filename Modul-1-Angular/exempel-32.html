@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 32</title>
+  </head>
+
+<body ng-app="app">
+    <h1>Exempel 32</h1>
+    <h2>Arbeta med Angular Services (Tjänster)</h2>
+    <h3>Tjänsten $intervall</h3>
+
+    <h1 ng-controller="ctrl">{{clock}}</h1>
+
+    <script>
+        
+        var app = angular.module("app", []);
+        app.controller("ctrl", function($scope , $interval){
+           // $scope.clock = new Date().toLocaleTimeString();
+           $interval(function(){
+              $scope.clock = new Date().toLocaleTimeString();
+           } , 1000)
+
+        })
+
+    </script>    
+
+
+</body>
+</html>

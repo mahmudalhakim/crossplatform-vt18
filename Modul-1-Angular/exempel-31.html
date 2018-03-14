@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 31</title>
+  </head>
+
+<body ng-app="app">
+    <h1>Exempel 31</h1>
+    <h2>Arbeta med Angular Services (Tjänster)</h2>
+    <h3>Tjänsten $timeout</h3>
+
+    <script>
+        
+        var app = angular.module("app", []);
+        app.controller("ctrl", function($scope , $timeout){
+           $scope.myHeader = "Hello World!";
+           $timeout(function(){
+                        $scope.myHeader = "Välkommen till oss!" 
+                    }
+                    , 2000);
+        })
+
+    </script>    
+
+    <h1 ng-controller="ctrl">{{myHeader}}</h1>
+
+</body>
+</html>

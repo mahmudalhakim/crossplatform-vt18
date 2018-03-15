@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+    var app = angular.module("app", []);
+    app.controller("ctrl", function($scope, $http){
+        $http.get("kunder.json")
+             .then(function(response){
+                $scope.kunder = response.data.kunder;
+             }) 
+    })
+    </script>
+</head>
+<body ng-app="app" ng-controller="ctrl" class="container">
+  
+    <h1>Lista över alla kunder</h1>
+
+    <ul>
+        <li ng-repeat="k in kunder">
+            {{k.namn}}
+        </li>
+    </ul>
+<hr>
+    <h2>En tabell över alla kunder</h2>
+    <table class="table table-hover table-sm">
+        <tr>
+            <th>Namn</th>
+            <th>Mobil</th>
+            <th>E-post</th>
+        </tr>
+        <tr ng-repeat="k in kunder">
+            <td>{{k.namn}}</td>
+            <td>{{k.mobil}}</td>
+            <td>{{k.epost}}</td>
+        </tr>
+    </table>
+<hr>
+
+    <h2>En dropdown-lista över alla kunder</h2>
+    
+    <select ng-model="kund">
+        <option ng-repeat="k in kunder">
+            {{k.namn}}
+        </option>
+    </select>
+
+    <h2>Du har valt: {{kund}} </h2>
+
+    <h2>En dropdown-lista med ng-options istället för taggen option</h2>
+    <p>Vi måste använda ng-model i detta fall</p>
+    <p>OBS! Viktigt vid hantering av objekt</p>
+    <select ng-model="selected" 
+            ng-options="k.namn for k in kunder" >
+    </select>
+    <h2>Du har valt </h2>
+    <h3>{{selected.namn}}</h3>
+    <h3>{{selected.mobil}}</h3>
+    <h3>{{selected.epost}}</h3>
+    
+   
+<br><br>
+<hr>
+<pre>
+    {{kunder | json}}
+</pre>
+
+</body>
+</html>

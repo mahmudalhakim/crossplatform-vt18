@@ -1,0 +1,20 @@
+{
+    "kunder":[
+        {
+            "namn":"Mahmud Al Hakim", 
+            "mobil":"076-1659879" , 
+            "epost":"mahmud@alhakim.se"
+        },
+        {
+            "namn":"Kalle Anka", 
+            "mobil":"070-7657668" , 
+            "epost":"kalle@anka.se"
+        },
+        {
+            "namn":"Jani", 
+            "mobil":"075-3434334" , 
+            "epost":"jani@w3schools.com"
+        }
+    ]
+
+}

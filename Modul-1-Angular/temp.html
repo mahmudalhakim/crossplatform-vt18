@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exempel 35</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+<body class="container">
+    <h1>Exempel 35</h1>
+    <h2>Arbeta med Angular Services (Tjänster)</h2>
+    <h3>Tjänsten $http (OBS! Viktigt)</h3>
+    <h3>Externa resurser från t.ex
+        <a href="https://picsum.photos/list">
+            https://picsum.photos/list</a>
+    </h3>
+
+    <script>        
+        var app = angular.module("app", []);
+        app.controller("photosCtrl", function($scope , $http){
+          $http.get("https://picsum.photos/list")
+               .then(function(response){
+                   // Vad är response?
+                   $scope.photos  = response.data;
+                   
+               });
+        });
+    </script>    
+
+    <div ng-app="app" ng-controller="photosCtrl" ng-cloak="">
+        
+        <hr>
+        <pre>
+            {{photos | json}}
+        </pre>
+    </div>   
+    
+    
+    
+    <!-- 
+        <div ng-repeat="p in photos" style="float: left">
+            <a href="https://picsum.photos/{{p.width}}/{{p.height}}?image={{p.id}}" target="_blank">
+                
+                <img ng-src="https://picsum.photos/100/100?image={{p.id}}" alt="" class="img-thumbnail">
+            </a>
+            
+        </div> 
+        <div style="clear:both"></div>
+    -->
+    </body>
+</html>

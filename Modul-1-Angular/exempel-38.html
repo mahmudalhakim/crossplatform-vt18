@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module("app", []);
+        app.controller("ctrl", function ($scope, $http) {
+
+            var url = "https://dog.ceo/api/breeds/list/all";
+            $http.get(url)
+                 .then(function (response) {
+                    $scope.hundar = response.data.message;
+            });
+    
+            $scope.changeBreedImageUrl = function(breed){
+                $scope.breedImageUrl = "https://dog.ceo/api/breed/"+breed+"/images";
+                $http.get($scope.breedImageUrl)
+                 .then(function (response) {
+                   $scope.breedImages = response.data.message;
+                });
+            }   // changeBreedImageUrl
+
+        });  // ctrl
+
+    </script>
+</head>
+
+<body ng-app="app" ng-controller="ctrl" class="container">
+<h1><a href="https://dog.ceo/dog-api/" target="_blank">DOG API</a></h1>
+
+<select ng-model="hund" ng-change="changeBreedImageUrl(hund)">
+        <option value=""> -- Välj en hundras -- </option>
+        <option ng-repeat="(key, value) in hundar">{{key}}</option>
+</select>
+
+<hr>
+
+<!-- <h3>Du har valt: {{hund}}</h3> -->
+<!-- <h2>{{breedImageUrl}}</h2> -->
+
+<div class="row">
+    <div class="col-sm-2" ng-repeat="img in breedImages" >
+        <a href="{{img}}" target="_blank">  
+            <img ng-src="{{img}}" alt="" class="img-thumbnail img-fluid">
+        </a>  
+    </div> 
+</div>
+
+<!-- 
+<h2>TEST</h2>
+<ul ng-repeat="(key, value) in hundar">
+    <li>{{key}}</li>
+</ul>
+<hr>
+<pre>{{hundar | json}}</pre> -->
+
+</body>
+</html>

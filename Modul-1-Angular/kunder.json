@@ -1,17 +1,23 @@
 {
     "kunder":[
         {
-            "namn":"Mahmud Al Hakim", 
+            "namn":"Mahmud Al Hakim",
+            "adress": "Hemfridsvägen 1" ,
+            "postnummer": "123 45",
             "mobil":"076-1659879" , 
             "epost":"mahmud@alhakim.se"
         },
         {
             "namn":"Kalle Anka", 
+            "adress": "Hemfridsvägen 2",
+            "postnummer": "123 45",
             "mobil":"070-7657668" , 
             "epost":"kalle@anka.se"
         },
         {
             "namn":"Jani", 
+            "adress": "Hemfridsvägen 3",
+            "postnummer": "123 45",
             "mobil":"075-3434334" , 
             "epost":"jani@w3schools.com"
         }

@@ -13,6 +13,16 @@
              }) 
     })
     </script>
+    <style>
+    .adressetiketter{
+        padding: 5mm;
+        margin:5mm;
+        width:45mm;
+        height: 35mm;
+        border: 1px dashed grey;
+        float:left;
+    }
+    </style>
 </head>
 <body ng-app="app" ng-controller="ctrl" class="container">
   
@@ -60,6 +70,17 @@
     <h3>{{selected.mobil}}</h3>
     <h3>{{selected.epost}}</h3>
     
+    <hr>
+
+    <h2>Adressetiketter</h2>
+
+    <div ng-repeat="k in kunder" class="adressetiketter">
+        <b>{{k.namn}}</b> <br>
+        {{k.adress}} <br>
+        {{k.postnummer}}
+        <br>
+    </div>
+    <div style="clear:both;"></div>
    
 <br><br>
 <hr>

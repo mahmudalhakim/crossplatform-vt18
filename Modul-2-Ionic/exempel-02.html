@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+
+    <style>
+
+    .spinner svg {
+      width: 100px;
+      height: 100px;
+    }
+    </style>
+
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <a href="exempel-03.html" class="button">Kontakt</a>
+        <h1 class="title">Ionic Knappar</h1>
+        <a href="exempel-03.html" class="button button-calm">Kontakt</a>
+      </ion-header-bar>
+
+      <ion-content class="padding">
+
+        <h2>Knappar med A-taggen</h2>
+        <a href="">En standard länk</a> <br>
+        <a href="" class="button">Länk</a>
+
+        <h2>Knappar med Button-taggen</h2>
+        <button class="button">Standard Knapp</button>
+        <br><br>
+        <button class="button button-positive">
+          Positive
+        </button>
+        <button class="button button-calm">
+          Calm
+        </button>
+        <button class="button button-dark">
+          Dark
+        </button>
+        <br><br>
+        <button class="button button-large">
+          Stor knapp
+        </button>
+        <button class="button button-large button-energized">
+          Stor knapp
+        </button>
+        <br><br>
+        <button class="button button-small">Liten knapp</button>
+
+        <h2>Blockknapp</h2>
+        <button class="button button-block button-assertive">
+          Blockknapp
+        </button>
+
+        <h2>En grupp av knappar</h2>
+        <div class="button-bar">
+          <button class="button button-calm">Ett</button>
+          <button class="button button-balanced">Två</button>
+          <button class="button button-assertive">Tre</button>
+        </div>
+
+        <h2>Spinners</h2>
+        <ion-spinner></ion-spinner>
+        <ion-spinner class="spinner-energized"></ion-spinner>
+        <ion-spinner icon="android"></ion-spinner>
+        <ion-spinner icon="bubbles"></ion-spinner>
+        <ion-spinner icon="circles"></ion-spinner>
+        <ion-spinner icon="crescent"></ion-spinner>
+        <ion-spinner icon="dots"></ion-spinner>
+        <ion-spinner icon="lines"></ion-spinner>
+        <ion-spinner icon="ripple"></ion-spinner>
+        <ion-spinner icon="sprial"></ion-spinner>
+
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

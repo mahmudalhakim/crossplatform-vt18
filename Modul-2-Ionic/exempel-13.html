@@ -38,29 +38,23 @@
 
     <ion-pane>
       <ion-header-bar class="bar-light">
-        <h1 class="title">Reorder Demo</h1>
+        <h1 class="title">My Image Collection</h1>
       </ion-header-bar>
 
-      <ion-content class="padding">
+      <ion-content>
 
-        <h1>Reorder</h1>
+        <div ng-controller="CollectionController">
 
-        <ion-list
-         ng-controller="ReorderController"
-         show-reorder="true">
-          <ion-item ng-repeat="item in items">
-             {{item}}
-             <ion-reorder-button
-                class="ion-navicon"
-                on-reorder=
-                "moveItem(item, $fromIndex, $toIndex)"
-             >
-             </ion-reorder-button>
-          </ion-item>
-        </ion-list>
+          <img
+            collection-repeat="photo in photos"
+            ng-src="{{photo}}"
+            item-height="25%"
+            item-width="25%"
+          >
+        </div>
 
       </ion-content>
-      
+
     </ion-pane>
   </body>
 </html>

@@ -69,5 +69,13 @@ angular.module('starter', ['ionic'])
   }
 })
 
+// En controller som används i appen "My Image Collection"
+.controller("CollectionController", function($scope){
+  $scope.photos = []; // En array av bilder
+  for(var i=0 ; i< 100 ; i++){
+    $scope.photos.push('https://picsum.photos/250/?image='+i);
+  }
+  console.log($scope.photos);
 
+})
 

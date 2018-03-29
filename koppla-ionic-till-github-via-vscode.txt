@@ -1,0 +1,15 @@
+Att koppla GitHub till ett Ionic-Projekt i VS Code
+--------------------------------------------------
+1. Gå till GitHub och skapa en ny repo 
+OBS! Stäng inte Github-sidan. Vi behöver kopiera lite koder.
+2. Öppna terminalen och skapa ett nytt ionic-Projekt.
+3. Gå in i projektmappen (viktigt) i terminalen 
+med kommandot cd "namnet på Projektet".
+4. Kopiera kodblocket från GitHub under rubriken
+"…or create a new repository on the command line"
+5. Klistra in i terminalen.
+6. Vid ändringar i t.ex. www-mappen dyker upp en siffra till vänster
+(ikon 3 som heter Source Control).
+Klicka på den och skriv ett meddelande och tryck på 
+CMD+Enter (Ctrl+Enter).
+7. Öppna menyn i Source Control och kör en Push
